@@ -36,13 +36,12 @@
     "not op_mini all"
   ],
   "description": "Namo Raga twitter battle web app",
-  "main": "index.js",
+  "main": "src/index.js",
   "devDependencies": {},
   "repository": "git+https://github.com/soumen-saniel/namo-raga-twitter-battle-web-app.git",
   "author": "soumen saniel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/soumen-saniel/namo-raga-twitter-battle-web-app/issues"
-  },
-  "homepage": "https://github.com/soumen-saniel/namo-raga-twitter-battle-web-app#readme"
+  }
 }

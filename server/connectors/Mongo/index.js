@@ -16,9 +16,10 @@ class Mongo {
     this.client.connect((err, client) => {
       if (err) {
         console.error(err)
+      } else {
+        this.db = client.db(database)
+        console.log('Connected successfully to Atlas mongo server')
       }
-      this.db = client.db(database)
-      console.log('Connected successfully to Atlas mongo server')
     })
   }
   /**
