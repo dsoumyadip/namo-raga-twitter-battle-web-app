@@ -16,10 +16,9 @@ class CountCollection {
     /**
      * Function to fetch tweet counts
      */
-    async getTweetCount (query = {}) {
+    getTweetCount (query = {}) {
         try {
             const result = this.client.findDocument('tweet_count', query)
-            console.log(result)
             return result
         } catch (err) {
             throw err
@@ -28,10 +27,9 @@ class CountCollection {
     /**
      * Function to fetch sentiment counts
      */
-    async getSentimentCount (query = {}) {
+    getSentimentCount (query = {}) {
         try {
             const result = this.client.findDocument('sentiment_count', query)
-            console.log(result)
             return result
         } catch (err) {
             throw err

@@ -3,6 +3,8 @@ module.exports = {
     authDatabase: process.env.MONGO_AUTH_DB,
     database: process.env.MONGO_DB,
     options: {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        poolSize: 2,
+        promiseLibrary: global.Promise
     }
 }

@@ -1,13 +1,7 @@
-/**
- * Import mongoose https://mongoosejs.com/docs/guide.html
- */
-const mongoose = require('mongoose')
-/**
- * Mongo connector
- * @class Mongo
- */
+const MongoClient = require('mongodb').MongoClient
+
 class Mongo {
-  constructor (config) {
+  constructor(config) {
     /**
      * Destructuring config
      */
@@ -17,24 +11,14 @@ class Mongo {
       database,
       options
     } = config
-    /**
-     * Create uri
-     */
-    const uri = `${url}${database}?authSource=${authDatabase}`
-    /**
-     * Establish connection
-     */
-    mongoose.connect(uri, options)
-    this.db = mongoose.connection
-    /**
-     * Add logging on error
-     */
-    this.db.on('error', console.error.bind(console, 'connection error:'))
-    /**
-     * Check connected
-     */
-    this.db.once('open', () => {
-      console.log('Connected successfully to Atlas server')
+    this.database = database
+    this.client = new MongoClient(`${url}&authSource=${authDatabase}`, options)
+    this.client.connect((err, client) => {
+      if (err) {
+        console.error(err)
+      }
+      this.db = client.db(database)
+      console.log('Connected successfully to Atlas mongo server')
     })
   }
   /**
@@ -43,39 +27,21 @@ class Mongo {
    * @param {object} query - Query object
    * @returns {promise}
    */
-  findDocument (collectionName, query = {}) {
+  findDocument(collectionName, query = {}) {
     /**
      * Create new promise
      */
     const promise = new Promise((resolve, reject) => {
-        /**
-         * Open connection
-         */
-        this.db.once('open', () => {
-            /**
-             * Get collection instance
-             */
-            console.log(collectionName)
-            this.db.collection(collectionName, (err, collection) => {
-                if (err) {
-                    reject(err)
-                }
-                /**
-                 * Find documents from collection
-                 */
-                console.log(collection)
-                collection.find(query).toArray((err, data) => {
-                    if (err) {
-                        reject(err)
-                    }
-                    /**
-                     * Resolve promise
-                     */
-                    console.log(data)
-                    resolve(data)
-                })
-            })
-        })
+      /**
+       * Open connection
+       */
+      const collection = this.db.collection(collectionName)
+      collection.find(query).toArray((err, docs) => {
+        if (err) {
+          reject(err)
+        }
+        resolve(docs)
+      })
     })
     /**
      * Return promise
