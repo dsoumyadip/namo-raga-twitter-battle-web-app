@@ -15,6 +15,7 @@
     "mongodb": "^3.1.13",
     "nodemon": "^1.18.10",
     "react": "^16.8.3",
+    "react-apollo": "^2.5.1",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"

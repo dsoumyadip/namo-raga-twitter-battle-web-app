@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 /**
+ * Data provider
+ */
+import DataProvider from './dataProvider'
+/**
  * Theme provider
  */
 import { MuiThemeProvider } from '@material-ui/core/styles'
@@ -23,12 +27,14 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme.Default}>
         <CssBaseline/>
-        <Router>
-          <div>
-            <Route exact path='/' component={routeProps => <Dashboard {...routeProps} />} />
-            <Route path='/about' component={routeProps => <About {...routeProps} />} />
-          </div>
-        </Router>
+        <DataProvider>
+          <Router>
+            <div>
+              <Route exact path='/' component={routeProps => <Dashboard {...routeProps} />} />
+              <Route path='/about' component={routeProps => <About {...routeProps} />} />
+            </div>
+          </Router>
+        </DataProvider>
       </MuiThemeProvider>
     )
   }
