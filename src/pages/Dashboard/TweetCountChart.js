@@ -69,14 +69,16 @@ class TweetCountChart extends React.Component {
         return ( 
             <div>
                 <LineChart
-                    style={{ '.label': { fill: 'black' } }}
+                    style={{ '.label': { fill: 'white' } }}
                     axes
                     grid
                     xType={'text'}
                     xTicks={10}
+                    yTicks={10}
                     height={300}
                     width={800}
-                    axisLabels={{x: 'Timestamp', y: 'Count'}}
+                    lineColors={['pink', 'cyan']}
+                    axisLabels={{x: 'Timestamp', y: 'Tweet Count'}}
                     interpolate={'cardinal'}
                     data={data}
                 />

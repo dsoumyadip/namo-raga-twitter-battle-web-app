@@ -7,7 +7,6 @@ import Section from '../../components/section'
 /**
  * UI
  */
-import Typograph from '@material-ui/core/Typography'
 /**
  * Views
  */
@@ -18,7 +17,6 @@ class Dashboard extends React.Component {
         return (
             <Layout>
                 <Section>
-                    <Typograph variant='h1'>Dashboard</Typograph>
                     <TweetCountChart/>
                 </Section>
             </Layout>
