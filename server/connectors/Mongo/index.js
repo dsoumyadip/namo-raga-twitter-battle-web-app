@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient
+const ObjectId = require('mongodb').ObjectID
 
 class Mongo {
   constructor(config) {
@@ -28,7 +29,7 @@ class Mongo {
    * @param {object} query - Query object
    * @returns {promise}
    */
-  findDocument(collectionName, query = {}) {
+  findDocument(collectionName, lastId = null, limit = 100) {
     /**
      * Create new promise
      */
@@ -37,12 +38,21 @@ class Mongo {
        * Open connection
        */
       const collection = this.db.collection(collectionName)
-      collection.find(query).toArray((err, docs) => {
-        if (err) {
-          reject(err)
-        }
-        resolve(docs)
-      })
+      if (lastId) {
+        collection.find({'_id': {'$gt': ObjectId(lastId)}}).sort({'_id': -1}).limit(limit).toArray((err, docs) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(docs)
+        })
+      } else {
+        collection.find().sort({'_id': -1}).limit(limit).toArray((err, docs) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(docs)
+        })
+      }
     })
     /**
      * Return promise

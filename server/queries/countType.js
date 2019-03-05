@@ -44,12 +44,18 @@ const sentimentCountFields = {
     _id: {
         type: GraphQLID
     },
-    ticker: {
-        type: GraphQLString
-    },
-    sentiment: {
+    namo_positive: {
         type: GraphQLInt
-    }
+    },
+    namo_negative: {
+        type: GraphQLInt
+    },
+    raga_positive: {
+        type: GraphQLInt
+    },
+    raga_negative: {
+        type: GraphQLInt
+    },
 }
 
 const tweetCountType = new GraphQLObjectType({
@@ -67,21 +73,27 @@ const sentimentCountType = new GraphQLObjectType({
 const getTweetCounts = {
     type: new GraphQLList(tweetCountType),
     args: {
-        query: {
-            type: GraphQLJSONType
+        lastId: {
+            type: GraphQLID
+        },
+        limit: {
+            type: GraphQLInt
         }
     },
-    resolve: (_, { query }) => countCollection.getTweetCount(query)
+    resolve: (_, { lastId, limit }) => countCollection.getTweetCount(lastId, limit)
 }
 
 const getSentimentCounts = {
     type: new GraphQLList(sentimentCountType),
     args: {
-        query: {
-            type: GraphQLJSONType
+        lastId: {
+            type: GraphQLID
+        },
+        limit: {
+            type: GraphQLInt
         }
     },
-    resolve: (_, { query }) => countCollection.getSentimentCount(query)
+    resolve: (_, { lastId, limit }) => countCollection.getSentimentCount(lastId, limit)
 }
 /**
  * Mutations
