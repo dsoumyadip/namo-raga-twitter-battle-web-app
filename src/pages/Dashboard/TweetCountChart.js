@@ -20,11 +20,12 @@ import Typography from '@material-ui/core/Typography'
 
 class TweetCountChart extends React.Component {
     state = {
-        data: []
+        data: [],
+        lastId: null
     }
 
     componentDidMount () {
-        this.fetchData()
+        this.fetchInitData()
         const intervalId = setInterval(this.fetchData, 10000)
         this.setState({intervalId: intervalId})
     }
@@ -33,19 +34,45 @@ class TweetCountChart extends React.Component {
         clearInterval(this.state.intervalId)
     }
 
-    fetchData = async () => {
+    fetchInitData = async () => {
         const { client } = this.props
         try {
             const result = await client.query({
                 query: getTweetCounts,
                 variables: {
-                  limit: 30
+                  limit: 50
                 },
                 fetchPolicy: 'network-only'
             })
 
-            const data = this.formatData(result.data.getTweetCounts)
-            this.setState({ data: data })
+            const data = this.formatData(result.data.getTweetCounts.reverse())
+            const lastId = result.data.getTweetCounts[0]._id
+            this.setState({ data, lastId })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    fetchData = async () => {
+        const { client } = this.props
+        const { data, lastId } = this.state
+        try {
+            const result = await client.query({
+                query: getTweetCounts,
+                variables: {
+                  limit: 1,
+                  lastId: lastId
+                },
+                fetchPolicy: 'network-only'
+            })
+
+            if (result.data && result.data.getTweetCounts && result.data.getTweetCounts.length) {
+                const newData = this.formatData(result.data.getTweetCounts)
+                const newLastId = result.data.getTweetCounts[0]._id
+                data.shift()
+                data.push(newData[0])
+                this.setState({ data: data, lastId: newLastId })
+            }
         } catch (err) {
             console.log(err)
         }
@@ -56,7 +83,7 @@ class TweetCountChart extends React.Component {
             name: moment(ObjectID(item._id).getTimestamp()).format('h:mm:ss a'),
             raga: item.raga_count,
             namo: item.namo_count
-        })).reverse()
+        }))
     }
 
     render() {

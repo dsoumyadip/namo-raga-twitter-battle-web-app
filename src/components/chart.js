@@ -12,10 +12,6 @@ import {
     Legend,
     ResponsiveContainer
 } from 'recharts'
-/**
- * UI
- */
-import Typograph from '@material-ui/core/Typography'
 
 const Chart = props => {
     const {
