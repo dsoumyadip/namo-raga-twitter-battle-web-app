@@ -11,6 +11,7 @@ import Section from '../../components/section'
  * Views
  */
 import TweetCountChart from './TweetCountChart'
+import PositiveNegativeCountChart from './PositiveNegativeCountChart'
 
 class Dashboard extends React.Component {
     render () {
@@ -18,6 +19,8 @@ class Dashboard extends React.Component {
             <Layout>
                 <Section>
                     <TweetCountChart/>
+                    <br/>
+                    <PositiveNegativeCountChart/>
                 </Section>
             </Layout>
         )
