@@ -97,32 +97,32 @@ class PositiveNegativeCountChart extends React.Component {
             <React.Fragment>
                 <Paper>
                     <br/>
-                    <Typography align='center' variant='h3' gutterBottom>Rahul vs Modi Live Positive Tweet Count</Typography>
+                    <Typography align='center' variant='h4' gutterBottom>Rahul vs Modi Live Positive Tweet Count</Typography>
                     <Divider/>
                     <br/>
                     <Chart
                         data={data}
                         yAxisLabel='Tweet count'
                         xAxisLabel='Timestamp'
-                        Legend1='Rahul tweet count'
+                        Legend1='Rahul positive tweet count'
                         DataKey1='ragaPositive'
-                        Legend2='Modi tweet count'
+                        Legend2='Modi positive tweet count'
                         DataKey2='namoPositive'
                     />
                 </Paper>
                 <br/>
                 <Paper>
                     <br/>
-                    <Typography align='center' variant='h3' gutterBottom>Rahul vs Modi Live Negative Tweet Count</Typography>
+                    <Typography align='center' variant='h4' gutterBottom>Rahul vs Modi Live Negative Tweet Count</Typography>
                     <Divider/>
                     <br/>
                     <Chart
                         data={data}
                         yAxisLabel='Tweet count'
                         xAxisLabel='Timestamp'
-                        Legend1='Rahul tweet count'
+                        Legend1='Rahul negative tweet count'
                         DataKey1='ragaNegative'
-                        Legend2='Modi tweet count'
+                        Legend2='Modi negative tweet count'
                         DataKey2='namoNegative'
                     />
                 </Paper>
