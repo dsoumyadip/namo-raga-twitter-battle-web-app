@@ -33,6 +33,11 @@ class About extends React.Component {
         return (
             <Layout>
                 <React.Fragment>
+                    {
+                        /**
+                         * Introduction
+                         */
+                    }
                     <Section>
                         <Grid container spacing={32} alignItems='center'>
                             <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
@@ -59,6 +64,11 @@ class About extends React.Component {
                             </Grid>
                         </Grid>
                     </Section>
+                    {
+                        /**
+                         * Technical skills
+                         */
+                    }
                     <Section>
                         <Typograph variant='h4' color='primary' gutterBottom><b>TECHNICAL SKILLS</b></Typograph>
                         <Divider/>
