@@ -1,3 +1,3 @@
-import indigo from '@material-ui/core/colors/indigo'
+import cyan from '@material-ui/core/colors/cyan'
 
-export default indigo
+export default cyan

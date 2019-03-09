@@ -1,3 +1,3 @@
-import deepOrange from '@material-ui/core/colors/deepOrange'
-
-export default deepOrange
+export default {
+    main: '#FFFFFF'
+}

@@ -14,6 +14,9 @@ import {
  * UI
  */
 import Chart from 'components/chart'
+import Divider from '@material-ui/core/Divider'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 
 class TweetCountChart extends React.Component {
     state = {
@@ -62,15 +65,20 @@ class TweetCountChart extends React.Component {
         } = this.state
 
         return ( 
-            <div>
+            <Paper>
+                <Typography align='center' variant='h3'>Rahul vs Modi Live Tweet Count</Typography>
+                <Divider/>
+                <br/>
                 <Chart
                     data={data}
-                    xLabel='Rahul tweet count'
-                    xDataKey='raga'
-                    yLabel='Modi tweet count'
-                    yDataKey='namo'
+                    yAxisLabel='Tweet count'
+                    xAxisLabel='Timestamp'
+                    Legend1='Rahul tweet count'
+                    DataKey1='raga'
+                    Legend2='Modi tweet count'
+                    DataKey2='namo'
                 />
-            </div>
+            </Paper>
         )
     }
 }

@@ -17,8 +17,8 @@ const palette = {
   secondary: secondary,
   contrastThreshold: 3,
   background: {
-    paper: secondary['500'],
-    default: primary['500']
+    paper: primary['500'],
+    default: primary['200']
   }
 }
 /**
