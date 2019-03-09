@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  api:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    command: 'npm run server'
+    volumes:
+      - ./:/admin
+    ports:
+      - 8080:8080
+    env_file: .env
+
+  ui:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    command: 'npm run start'
+    volumes:
+      - ./:/admin
+    ports:
+      - 3000:3000
+    env_file: .env
