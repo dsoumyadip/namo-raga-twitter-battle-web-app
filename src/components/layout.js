@@ -3,12 +3,14 @@ import React from 'react'
  * Components
  */
 import Header from './header'
+import Footer from './footer'
 
 const Layout = props => {
     return (
         <>
             <Header/>
             {React.cloneElement(props.children, {...props})}
+            <Footer/>
         </>
     )
 }

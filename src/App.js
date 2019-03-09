@@ -21,6 +21,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
  */
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
+import History from './pages/History'
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
             <div>
               <Route exact path='/' component={routeProps => <Dashboard {...routeProps} />} />
               <Route path='/about' component={routeProps => <About {...routeProps} />} />
+              <Route path='/history' component={routeProps => <History {...routeProps} />} />
             </div>
           </Router>
         </DataProvider>
