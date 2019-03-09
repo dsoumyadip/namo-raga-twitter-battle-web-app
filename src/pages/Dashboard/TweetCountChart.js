@@ -13,7 +13,7 @@ import {
 /**
  * UI
  */
-import { LineChart } from 'react-easy-chart'
+import Chart from 'components/chart'
 
 class TweetCountChart extends React.Component {
     state = {
@@ -21,6 +21,7 @@ class TweetCountChart extends React.Component {
     }
 
     componentDidMount () {
+        this.fetchData()
         const intervalId = setInterval(this.fetchData, 10000)
         this.setState({intervalId: intervalId})
     }
@@ -35,7 +36,7 @@ class TweetCountChart extends React.Component {
             const result = await client.query({
                 query: getTweetCounts,
                 variables: {
-                  limit: 10
+                  limit: 30
                 },
                 fetchPolicy: 'network-only'
             })
@@ -48,17 +49,11 @@ class TweetCountChart extends React.Component {
     }
 
     formatData (data) {
-        const raga = data.map(item => ({
-            x: moment(ObjectID(item._id).getTimestamp()).format('h:mm:ss a'),
-            y: item.raga_count
-        }))
-
-        const namo = data.map(item => ({
-            x: moment(ObjectID(item._id).getTimestamp()).format('h:mm:ss a'),
-            y: item.namo_count
-        }))
-
-        return [namo, raga]
+        return data.map(item => ({
+            name: moment(ObjectID(item._id).getTimestamp()).format('h:mm:ss a'),
+            raga: item.raga_count,
+            namo: item.namo_count
+        })).reverse()
     }
 
     render() {
@@ -68,19 +63,12 @@ class TweetCountChart extends React.Component {
 
         return ( 
             <div>
-                <LineChart
-                    style={{ '.label': { fill: 'white' } }}
-                    axes
-                    grid
-                    xType={'text'}
-                    xTicks={10}
-                    yTicks={10}
-                    height={300}
-                    width={800}
-                    lineColors={['pink', 'cyan']}
-                    axisLabels={{x: 'Timestamp', y: 'Tweet Count'}}
-                    interpolate={'cardinal'}
+                <Chart
                     data={data}
+                    xLabel='Rahul tweet count'
+                    xDataKey='raga'
+                    yLabel='Modi tweet count'
+                    yDataKey='namo'
                 />
             </div>
         )

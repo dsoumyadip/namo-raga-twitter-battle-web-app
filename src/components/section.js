@@ -11,13 +11,6 @@ const styles = theme => ({
   },
   content: {
     margin: '0 auto',
-    maxWidth: '750px',
-    [theme.breakpoints.up('md')]: {
-      maxWidth: '970px'
-    },
-    [theme.breakpoints.up('lg')]: {
-      maxWidth: '80%'
-    },
     paddingLeft: theme.spacing.unit * 2,
     paddingRight: theme.spacing.unit * 2,
     paddingTop: theme.spacing.unit * 4,
