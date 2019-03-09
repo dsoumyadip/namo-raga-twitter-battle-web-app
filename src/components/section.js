@@ -11,10 +11,20 @@ const styles = theme => ({
   },
   content: {
     margin: '0 auto',
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '90%'
+    },
+    [theme.breakpoints.up('lg')]: {
+      maxWidth: '1200px'
+    },
     paddingLeft: theme.spacing.unit * 2,
     paddingRight: theme.spacing.unit * 2,
     paddingTop: theme.spacing.unit * 4,
-    paddingBottom: theme.spacing.unit * 4
+    paddingBottom: theme.spacing.unit * 16,
+    [theme.breakpoints.up('xl')]: {
+      paddingTop: theme.spacing.unit * 16,
+      paddingBottom: theme.spacing.unit * 16
+    }
   }
 })
 

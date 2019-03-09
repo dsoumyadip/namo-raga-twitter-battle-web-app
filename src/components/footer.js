@@ -45,7 +45,7 @@ const Footer = ({ classes }) => {
     <footer className={classes.root}>
       <Section>
         <Grid container justify='center' spacing={32}>
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
             <ContactForm/>
           </Grid>
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
@@ -59,7 +59,7 @@ const Footer = ({ classes }) => {
                         primaryTypographyProps={{
                             variant: 'h5'
                         }}
-                        secondary={<a href='https://www.linkedin.com/in/soumyadip-dutta-7433041b/' target='blank'>soumyadip-dutta</a>}
+                        secondary={<a href='https://www.linkedin.com/in/soumyadip-dutta-7433041b/' target='blank'>Soumyadip Dutta</a>}
                         secondaryTypographyProps={{
                             variant: 'subtitle1'
                         }}
