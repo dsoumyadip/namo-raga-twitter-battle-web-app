@@ -21,6 +21,9 @@ import ProfileImage from './profile.jpg'
  * Styles
  */
 const styles = theme => ({
+    section: {
+        paddingBottom: theme.spacing.unit * 16,
+    },
     card: {},
     media: {
         height: 350
@@ -38,7 +41,7 @@ class About extends React.Component {
                          * Introduction
                          */
                     }
-                    <Section>
+                    <Section className={classes.section}>
                         <Grid container spacing={32} alignItems='center'>
                             <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
                                 <Card className={classes.card}>
@@ -49,7 +52,7 @@ class About extends React.Component {
                                     />
                                 </Card>
                             </Grid>
-                            <Grid item xs={12} sm={6} md={9} lg={9} xl={9}>
+                            <Grid item xs={12} sm={6} md={8} lg={8} xl={8}>
                                 <Typograph variant='h2' gutterBottom><b>{'{ Soumyadip Dutta }'}</b></Typograph>
                                 <Typograph variant='h5' color='primary'>Data Scientist and Machine Learning Engineer</Typograph>
                                 <Typograph variant='body1' gutterBottom>
@@ -69,7 +72,7 @@ class About extends React.Component {
                          * Technical skills
                          */
                     }
-                    <Section>
+                    <Section className={classes.section}>
                         <Typograph variant='h4' color='primary' gutterBottom><b>TECHNICAL SKILLS</b></Typograph>
                         <Divider/>
                         <br/>
