@@ -43,12 +43,21 @@ class Mongo {
        * Open connection
        */
       const collection = this.db.collection(collectionName)
-      collection.find(query).sort({'_id': -1}).limit(limit).toArray((err, docs) => {
-        if (err) {
-          reject(err)
-        }
-        resolve(docs)
-      })
+      if (limit) {
+        collection.find(query).sort({'_id': -1}).limit(limit).toArray((err, docs) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(docs)
+        })
+      } else {
+        collection.find(query).sort({'_id': -1}).toArray((err, docs) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(docs)
+        })
+      }
     })
     /**
      * Return promise

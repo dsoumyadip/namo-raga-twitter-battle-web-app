@@ -1,6 +1,5 @@
 import React from 'react'
 import moment from 'moment'
-import { ObjectID } from 'mongodb'
 /**
  * Data
  */
@@ -32,7 +31,7 @@ class HistoricalTweetCountChart extends React.Component {
 
     formatData (data) {
         return data.map(item => ({
-            name: moment(ObjectID(item._id).getTimestamp()).format('h:mm:ss a'),
+            name: moment(Number(item._id)).format('DD MMM h:mm a'),
             raga: item.raga_count,
             namo: item.namo_count
         }))

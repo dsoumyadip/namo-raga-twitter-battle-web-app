@@ -65,12 +65,31 @@ class CountCollection {
                 }
             }
 
-            const result = this.client.findDocument({
-                collectionName: 'tweet_count',
-                query,
-                limit: 10
+            const promise = new Promise((resolve, reject) => {
+                const collection = this.client.db.collection('tweet_count')
+                collection.aggregate([
+                    { '$match': query },
+                    { '$group': {
+                        '_id': {
+                            '$toDate': {
+                                '$subtract': [
+                                    { '$toLong': { '$toDate': '$_id' }  },
+                                    { '$mod': [ { '$toLong': { '$toDate': '$_id' } }, 1000 * 60 * 60 ] }
+                                ]
+                            }
+                        },
+                        'raga_count': { '$sum': '$raga_count' },
+                        'namo_count': { '$sum': '$namo_count' }
+                    }}
+                ]).toArray((err, docs) => {
+                    if (err) {
+                        reject(err)
+                    }
+                    resolve(docs)
+                })
             })
-            return result
+
+            return promise
         } catch (err) {
             throw err
         }
