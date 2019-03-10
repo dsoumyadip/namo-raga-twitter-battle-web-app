@@ -37,6 +37,9 @@ const tweetCountFields = {
     },
     raga_count: {
         type: GraphQLInt
+    },
+    timestamp: {
+        type: GraphQLString
     }
 }
 
@@ -56,6 +59,9 @@ const sentimentCountFields = {
     raga_negative: {
         type: GraphQLInt
     },
+    timestamp: {
+        type: GraphQLString
+    }
 }
 
 const tweetCountType = new GraphQLObjectType({
@@ -95,6 +101,19 @@ const getSentimentCounts = {
     },
     resolve: (_, { lastId, limit }) => countCollection.getSentimentCount(lastId, limit)
 }
+
+const getHistoricalTweetCounts = {
+    type: new GraphQLList(tweetCountType),
+    args: {
+        from: {
+            type: GraphQLString
+        },
+        to: {
+            type: GraphQLString
+        }
+    },
+    resolve: (_, { from, to }) => countCollection.getHistoricalTweetCount(from, to)
+}
 /**
  * Mutations
  */
@@ -108,7 +127,8 @@ const dummy = {
 module.exports = {
     queries: {
         getTweetCounts,
-        getSentimentCounts
+        getSentimentCounts,
+        getHistoricalTweetCounts
     },
     mutations: {
         dummy

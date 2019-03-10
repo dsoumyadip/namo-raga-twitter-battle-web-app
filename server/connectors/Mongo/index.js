@@ -29,30 +29,26 @@ class Mongo {
    * @param {object} query - Query object
    * @returns {promise}
    */
-  findDocument(collectionName, lastId = null, limit = 100) {
+  findDocument(args) {
     /**
      * Create new promise
      */
+    const {
+      collectionName,
+      limit,
+      query
+    } = args
     const promise = new Promise((resolve, reject) => {
       /**
        * Open connection
        */
       const collection = this.db.collection(collectionName)
-      if (lastId) {
-        collection.find({'_id': {'$gt': ObjectId(lastId)}}).sort({'_id': -1}).limit(limit).toArray((err, docs) => {
-          if (err) {
-            reject(err)
-          }
-          resolve(docs)
-        })
-      } else {
-        collection.find().sort({'_id': -1}).limit(limit).toArray((err, docs) => {
-          if (err) {
-            reject(err)
-          }
-          resolve(docs)
-        })
-      }
+      collection.find(query).sort({'_id': -1}).limit(limit).toArray((err, docs) => {
+        if (err) {
+          reject(err)
+        }
+        resolve(docs)
+      })
     })
     /**
      * Return promise
