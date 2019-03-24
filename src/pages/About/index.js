@@ -1,4 +1,5 @@
 import React from 'react'
+import cv from 'static/Soumyadip_Dutta.pdf'
 /**
  * Components
  */
@@ -7,12 +8,17 @@ import Section from '../../components/section'
 /**
  * UI
  */
+import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Typograph from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
+/**
+ * Icon
+ */
+import Download from '@material-ui/icons/CloudDownload'
 /**
  * Image
  */
@@ -60,10 +66,15 @@ class About extends React.Component {
                                     challenging tasks, make my day. I have traversed the field of electronics,
                                     moved on to the domain of data analytics and machine learning.
                                 </Typograph>
-                                <Typograph variant='body1'>
+                                <Typograph variant='body1' gutterBottom>
                                     I expect to thrive in an organisation, which helps me building a steep
                                     learning curve, without compromising on quality and ability.
                                 </Typograph>
+								<a href={cv} download>
+									<Button variant='outlined' color='secondary'>
+										DOWNLOAD CV&nbsp;<Download/>
+									</Button>
+								</a>
                             </Grid>
                         </Grid>
                     </Section>

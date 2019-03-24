@@ -11,8 +11,10 @@ import Section from '../../components/section'
  * UI
  */
 import Button from '@material-ui/core/Button'
+import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
 /**
  * Views
@@ -23,6 +25,7 @@ import TweetCount from './HistoricalTweetCountChart'
  */
 const styles = theme => ({
     paper: {
+        background: theme.palette.secondary.main,
         padding: theme.spacing.unit * 4
     }
 })
@@ -45,6 +48,9 @@ class History extends React.Component {
         return (
             <Layout>
                 <Section>
+                    <Typography variant='h2' color='secondary' gutterBottom><b>Search Historical Data By Date and Time</b></Typography>
+                    <Divider/>
+                    <br/>
                     <Paper className={classes.paper}>
                         <MuiPickersUtilsProvider utils={MomentUtils} moment={moment}>
                             <Grid container alignItems='center' justify='center' spacing={32}>
@@ -71,9 +77,6 @@ class History extends React.Component {
                                         onChange={this.handleDateChange.bind(this, 'to')}
                                         onError={console.log}
                                     />
-                                </Grid>
-                                <Grid item xs={12} sm={4} md={3} lg={3} xl={3}>
-                                    <Button variant='outlined' size='large'>Submit</Button>
                                 </Grid>
                             </Grid>
                         </MuiPickersUtilsProvider>

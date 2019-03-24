@@ -62,10 +62,10 @@ const Footer = ({ classes, theme: themeObj }) => {
         <Section>
           <Grid container justify='center' spacing={32}>
             <Grid container alignItems='center' item xs={12} sm={12} md={7} lg={7} xl={7}>
-              <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
+              <Grid item xs={4} sm={4} md={4} lg={3} xl={3}>
                 <img className={classes.media} alt='avatar' src={avatar}/>
               </Grid>
-              <Grid container alignItems='center' justify='center' item xs={12} sm={12} md={8} lg={9} xl={9} spacing={16}>
+              <Grid container alignItems='center' justify='center' item xs={8} sm={8} md={8} lg={9} xl={9} spacing={16}>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
                   <img className={classes.media} alt='kafka' src={kafka}/>
                 </Grid>
