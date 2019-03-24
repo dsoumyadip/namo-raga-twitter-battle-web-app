@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 /**
  * Styles
  */
@@ -31,9 +32,14 @@ class Header extends React.Component {
         const { classes } = this.props
         return (
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position='static'>
                     <Toolbar>
                         <div className={classes.grow}>
+                            <Link className={classes.link} to='/'>
+                                <Button color='secondary' variant='text'><b>@ TWITTER BATTLE</b></Button>
+                            </Link>
+                        </div>
+                        <div>
                             <Link className={classes.link} to='/'><Button color='secondary'>Home</Button></Link>
                             <Link className={classes.link} to='/history'><Button color='secondary'>Historical Data</Button></Link>
                             <Link className={classes.link} to='/about'><Button color='secondary'>About</Button></Link>

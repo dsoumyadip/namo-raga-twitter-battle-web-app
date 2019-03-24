@@ -43,7 +43,7 @@ import gcp from 'images/gcp.png'
  */
 const styles = theme => ({
   root: {
-    background: theme.palette.primary.dark
+    background: theme.palette.primary.main
   },
   list: {
     [theme.breakpoints.up(`sm`)]: {

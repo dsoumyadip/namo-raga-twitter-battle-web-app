@@ -72,7 +72,7 @@ const Dashboard = ({ classes }) => {
                     <br/>
                     <Divider/>
                     <Typography align='center' variant='h2' gutterBottom><b>NAMO VS RAGA TWITTER BATTLE</b></Typography>
-                    <Typography align='center' variant='h5' color='textSecondary' gutterBottom>Before 2019 General Election have a look how NaMo and RaGa performing at Twitter.</Typography>
+                    <Typography align='center' variant='h5' color='textSecondary' gutterBottom>Before 2019 general election have a look at how NaMo and RaGa are performing in twitter</Typography>
                     <Divider/>
                     <br/>
                     <Grid container alignItems='center' justify='center'>
@@ -82,6 +82,9 @@ const Dashboard = ({ classes }) => {
                     </Grid>
                 </Section>
                 <Section>
+                    <Typography variant='h2' color='secondary' gutterBottom><b>Realtime twitter statistics</b></Typography>
+                    <Divider/>
+                    <br/>
                     <TweetCountChart/>
                     <br/>
                     <PositiveNegativeCountChart/>

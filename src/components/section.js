@@ -26,7 +26,7 @@ const styles = theme => ({
     },
     paddingLeft: theme.spacing.unit * 2,
     paddingRight: theme.spacing.unit * 2,
-    paddingTop: theme.spacing.unit * 4,
+    paddingTop: theme.spacing.unit * 8,
     paddingBottom: theme.spacing.unit * 8,
     [theme.breakpoints.up('xl')]: {
       paddingTop: theme.spacing.unit * 16,
