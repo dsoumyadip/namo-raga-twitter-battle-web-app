@@ -1,5 +1,12 @@
 import React from 'react'
-import Section from './section'
+/**
+ * Theme provider
+ */
+import { MuiThemeProvider } from '@material-ui/core/styles'
+/**
+ * Theme
+ */
+import theme from 'theme'
 /**
  * Contact form
  */
@@ -13,8 +20,11 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
+import Paper from '@material-ui/core/Paper'
+import Section from './section'
 import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
+import withTheme from '@material-ui/core/styles/withTheme'
 /**
  * Icons
  */
@@ -27,7 +37,7 @@ import { SocialIcon } from 'react-social-icons'
  */
 const styles = theme => ({
   root: {
-    background: theme.palette.primary[`500`]
+    background: theme.palette.primary.dark
   },
   list: {
     [theme.breakpoints.up(`sm`)]: {
@@ -40,102 +50,104 @@ const styles = theme => ({
   }
 })
 
-const Footer = ({ classes }) => {
+const Footer = ({ classes, theme: themeObj }) => {
   return (
-    <footer className={classes.root}>
-      <Section>
-        <Grid container justify='center' spacing={32}>
-          <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
-            <ContactForm/>
+    <Paper className={classes.root} component='footer'>
+      <MuiThemeProvider theme={theme.Dark}>
+        <Section>
+          <Grid container justify='center' spacing={32}>
+            <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
+              <ContactForm/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+              <List className={classes.list}>
+                <ListItem>
+                  <Avatar>
+                    <SocialIcon bgColor={themeObj.palette.grey['600']} fgColor={themeObj.palette.grey['900']} url='https://www.linkedin.com/in/soumyadip-dutta-7433041b/'/>
+                  </Avatar>
+                  <ListItemText
+                    primary='LinkedIn'
+                    primaryTypographyProps={{
+                      variant: 'h5'
+                    }}
+                    secondary={<a href='https://www.linkedin.com/in/soumyadip-dutta-7433041b/' target='blank'>Soumyadip Dutta</a>}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1'
+                    }}
+                  />
+                </ListItem>
+                  <ListItem>
+                    <Avatar>
+                      <SocialIcon bgColor={themeObj.palette.grey['600']} fgColor={themeObj.palette.grey['900']} url='https://github.com/sdp1992'/>
+                    </Avatar>
+                    <ListItemText
+                      primary='Github'
+                      primaryTypographyProps={{
+                        variant: 'h5'
+                      }}
+                      secondary={<a href='https://github.com/sdp1992' target='blank'>Soumyadip Dutta</a>}
+                      secondaryTypographyProps={{
+                        variant: 'subtitle1'
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Avatar>
+                      <Email/>
+                    </Avatar>
+                    <ListItemText
+                      primary='Email'
+                      primaryTypographyProps={{
+                        variant: 'h5'
+                      }}
+                      secondary={<a href='mailto:soumyadipdutta2007@gmail.com'>soumyadipdutta2007@gmail.com</a>}
+                      secondaryTypographyProps={{
+                        variant: 'subtitle1'
+                      }}
+                    />
+                </ListItem>
+                <ListItem>
+                  <Avatar>
+                    <Phone/>
+                  </Avatar>
+                  <ListItemText
+                    primary='Phone'
+                    primaryTypographyProps={{
+                      variant: 'h5'
+                    }}
+                    secondary='+19 9903-614-919'
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1'
+                    }}
+                  />
+                  </ListItem>
+                  <ListItem>
+                    <Avatar>
+                      <Location/>
+                    </Avatar>
+                    <ListItemText
+                      primary='Address'
+                      primaryTypographyProps={{
+                        variant: 'h5'
+                      }}
+                      secondary='Bengaluru, Karnataka, IN'
+                      secondaryTypographyProps={{
+                        variant: 'subtitle1'
+                      }}
+                    />
+                  </ListItem>
+              </List>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Divider/>
+              <br/>
+              <Typography align='center' variant='caption' color='textSecondary' gutterBottom>© All rights reserved {(new Date()).getFullYear()}</Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
-            <List className={classes.list}>
-                <ListItem>
-                    <Avatar>
-                        <SocialIcon bgColor='#FFF' url='https://www.linkedin.com/in/soumyadip-dutta-7433041b/'/>
-                    </Avatar>
-                    <ListItemText
-                        primary='LinkedIn'
-                        primaryTypographyProps={{
-                            variant: 'h5'
-                        }}
-                        secondary={<a href='https://www.linkedin.com/in/soumyadip-dutta-7433041b/' target='blank'>Soumyadip Dutta</a>}
-                        secondaryTypographyProps={{
-                            variant: 'subtitle1'
-                        }}
-                    />
-                </ListItem>
-                <ListItem>
-                    <Avatar>
-                        <SocialIcon bgColor='#FFF' url='https://github.com/sdp1992'/>
-                    </Avatar>
-                    <ListItemText
-                        primary='Github'
-                        primaryTypographyProps={{
-                            variant: 'h5'
-                        }}
-                        secondary={<a href='https://github.com/sdp1992' target='blank'>Soumyadip Dutta</a>}
-                        secondaryTypographyProps={{
-                            variant: 'subtitle1'
-                        }}
-                    />
-                </ListItem>
-                <ListItem>
-                    <Avatar>
-                        <Email color='secondary' />
-                    </Avatar>
-                    <ListItemText
-                        primary='Email'
-                        primaryTypographyProps={{
-                            variant: 'h5'
-                        }}
-                        secondary={<a href='mailto:soumyadipdutta2007@gmail.com'>soumyadipdutta2007@gmail.com</a>}
-                        secondaryTypographyProps={{
-                            variant: 'subtitle1'
-                        }}
-                    />
-              </ListItem>
-              <ListItem>
-                    <Avatar>
-                        <Phone color='secondary' />
-                    </Avatar>
-                    <ListItemText
-                        primary='Phone'
-                        primaryTypographyProps={{
-                            variant: 'h5'
-                        }}
-                        secondary='+19 9903-614-919'
-                        secondaryTypographyProps={{
-                            variant: 'subtitle1'
-                        }}
-                    />
-                </ListItem>
-                <ListItem>
-                    <Avatar>
-                        <Location color='secondary' />
-                    </Avatar>
-                    <ListItemText
-                        primary='Address'
-                        primaryTypographyProps={{
-                            variant: 'h5'
-                        }}
-                        secondary='Bengaluru, Karnataka, IN'
-                        secondaryTypographyProps={{
-                            variant: 'subtitle1'
-                        }}
-                    />
-                </ListItem>
-            </List>
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Divider/>
-            <br/>
-            <Typography align='center' variant='caption' color='textSecondary' gutterBottom>© All rights reserved {(new Date()).getFullYear()}</Typography>
-          </Grid>
-        </Grid>
-      </Section>
-    </footer>
+        </Section>
+      </MuiThemeProvider>
+    </Paper>
   )
 }
 
-export default withStyles(styles)(Footer)
+export default withTheme()(withStyles(styles)(Footer))

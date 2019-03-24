@@ -53,8 +53,8 @@ class About extends React.Component {
                                 </Card>
                             </Grid>
                             <Grid item xs={12} sm={6} md={8} lg={8} xl={8}>
-                                <Typograph variant='h2' gutterBottom><b>{'{ Soumyadip Dutta }'}</b></Typograph>
-                                <Typograph variant='h5' color='primary'>Data Scientist and Machine Learning Engineer</Typograph>
+                                <Typograph variant='h2' color='secondary' gutterBottom><b>{'{ Soumyadip Dutta }'}</b></Typograph>
+                                <Typograph variant='h5' color='secondary'><b>Data Scientist and Machine Learning Engineer</b></Typograph>
                                 <Typograph variant='body1' gutterBottom>
                                     Being an engineer, I take pride in being a quick learner. Crisp deadlines and
                                     challenging tasks, make my day. I have traversed the field of electronics,
@@ -73,12 +73,12 @@ class About extends React.Component {
                          */
                     }
                     <Section className={classes.section}>
-                        <Typograph variant='h4' color='primary' gutterBottom><b>TECHNICAL SKILLS</b></Typograph>
+                        <Typograph variant='h4' color='secondary' gutterBottom><b>TECHNICAL SKILLS</b></Typograph>
                         <Divider/>
                         <br/>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Languages</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Languages</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -88,7 +88,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>ML Algorithms</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>ML Algorithms</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -100,7 +100,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Deep Learning Algorithms</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Deep Learning Algorithms</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -112,7 +112,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Big Data Technologies</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Big Data Technologies</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -122,7 +122,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>DL Frameworks</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>DL Frameworks</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -132,7 +132,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Version Control Systems</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Version Control Systems</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -142,7 +142,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Cloud Services</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Cloud Services</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -152,7 +152,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Devops Tool</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Devops Tool</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -162,7 +162,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Data Visualization Tools</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Data Visualization Tools</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>
@@ -172,7 +172,7 @@ class About extends React.Component {
                         </Grid>
                         <Grid container spacing={32}>
                             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
-                                <Typograph variant='body1' color='primary'><b>Query Languages</b></Typograph>
+                                <Typograph variant='body1' color='secondary'><b>Query Languages</b></Typograph>
                             </Grid>
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Typograph variant='body1'>

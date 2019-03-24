@@ -34,9 +34,9 @@ class Header extends React.Component {
                 <AppBar position="static">
                     <Toolbar>
                         <div className={classes.grow}>
-                            <Link className={classes.link} to='/'><Button>Home</Button></Link>
-                            <Link className={classes.link} to='/history'><Button>Historical Data</Button></Link>
-                            <Link className={classes.link} to='/about'><Button>About</Button></Link>
+                            <Link className={classes.link} to='/'><Button color='secondary'>Home</Button></Link>
+                            <Link className={classes.link} to='/history'><Button color='secondary'>Historical Data</Button></Link>
+                            <Link className={classes.link} to='/about'><Button color='secondary'>About</Button></Link>
                         </div>
                     </Toolbar>
                 </AppBar>

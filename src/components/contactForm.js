@@ -121,12 +121,12 @@ class ContactForm extends React.Component {
           </Grid>
         </Grid>
         <br/>
-        <Button disabled={this.state.sending} size='large' type='submit' variant='outlined' >
+        <Button disabled={this.state.sending} size='large' type='submit' variant='contained' color='secondary'>
           { this.state.sending ? `sending message` : `send message` }
           { this.state.sending && <CircularProgress size={20} className={classes.progress} color='secondary' /> }
         </Button>
         {' '}
-        <Button disabled={this.state.sending} onClick={this.clear} size='large' variant='outlined' >clear</Button>
+        <Button disabled={this.state.sending} onClick={this.clear} size='large' variant='contained' color='secondary'>clear</Button>
 
         <Snackbar
           action={[
