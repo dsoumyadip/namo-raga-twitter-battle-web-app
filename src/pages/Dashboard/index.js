@@ -20,6 +20,10 @@ import Modi from 'images/Modi.jpg'
 import Rahul from 'images/Rahul.jpg'
 import twitter from 'images/twitter.jpg'
 /**
+ * Icons
+ */
+import Mouse from '@material-ui/icons/KeyboardArrowDown'
+/**
  * Styles
  */
 const styles = theme => ({
@@ -30,6 +34,19 @@ const styles = theme => ({
     },
     media: {
         width: '100%'
+    },
+    '@keyframes bounce': {
+        from: {
+            transform: 'translateY(0px)'
+        },
+        to: {
+            transform: 'translateY(-15px)'
+        }
+    }, 
+    icon: {
+        fontSize: '2rem',
+        opacity: '0.8',
+        animation: `bounce 1s infinite alternate ${theme.transitions.easing.easeInOut}`
     }
 })
 
@@ -57,6 +74,12 @@ const Dashboard = ({ classes }) => {
                     <Typography align='center' variant='h2' gutterBottom><b>NAMO VS RAGA TWITTER BATTLE</b></Typography>
                     <Typography align='center' variant='h5' color='textSecondary' gutterBottom>Before 2019 General Election have a look how NaMo and RaGa performing at Twitter.</Typography>
                     <Divider/>
+                    <br/>
+                    <Grid container alignItems='center' justify='center'>
+                        <Grid item>
+                            <Mouse className={classes.icon}/>
+                        </Grid>
+                    </Grid>
                 </Section>
                 <Section>
                     <TweetCountChart/>

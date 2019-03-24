@@ -32,6 +32,12 @@ import { SocialIcon } from 'react-social-icons'
  * Image
  */
 import avatar from 'images/avatar.png'
+import kafka from 'images/kafka.png'
+import spark from 'images/spark.png'
+import tenserflow from 'images/tenserflow.png'
+import mongodb from 'images/mongodb.png'
+import docker from 'images/docker.png'
+import gcp from 'images/gcp.png'
 /**
  * Styles
  */
@@ -45,7 +51,7 @@ const styles = theme => ({
     }
   },
   media: {
-    width: '100%'
+    width: '80%'
   }
 })
 
@@ -59,24 +65,24 @@ const Footer = ({ classes, theme: themeObj }) => {
               <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
                 <img className={classes.media} alt='avatar' src={avatar}/>
               </Grid>
-              <Grid container item xs={12} sm={12} md={8} lg={9} xl={9} spacing={8}>
+              <Grid container alignItems='center' justify='center' item xs={12} sm={12} md={8} lg={9} xl={9} spacing={16}>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
-                  <img className={classes.media} alt='avatar' src={avatar}/>
+                  <img className={classes.media} alt='kafka' src={kafka}/>
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
-                  <img className={classes.media} alt='avatar' src={avatar}/>
+                  <img className={classes.media} alt='spark' src={spark}/>
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
-                  <img className={classes.media} alt='avatar' src={avatar}/>
+                  <img className={classes.media} alt='tenserflow' src={tenserflow}/>
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
-                  <img className={classes.media} alt='avatar' src={avatar}/>
+                  <img className={classes.media} alt='mongodb' src={mongodb}/>
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
-                  <img className={classes.media} alt='avatar' src={avatar}/>
+                  <img className={classes.media} alt='docker' src={docker}/>
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
-                  <img className={classes.media} alt='avatar' src={avatar}/>
+                  <img className={classes.media} alt='gcp' src={gcp}/>
                 </Grid>
               </Grid>
             </Grid>
@@ -162,7 +168,9 @@ const Footer = ({ classes, theme: themeObj }) => {
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <Divider/>
               <br/>
-              <Typography align='center' variant='caption' color='textSecondary' gutterBottom>© All rights reserved {(new Date()).getFullYear()}</Typography>
+              <Typography align='center' variant='caption' color='textSecondary' gutterBottom>
+                Disclaimer: All the contents/resources have been used only for demonstration purpose.
+              </Typography>
             </Grid>
           </Grid>
         </Section>
