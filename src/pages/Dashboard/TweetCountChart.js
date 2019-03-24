@@ -94,7 +94,7 @@ class TweetCountChart extends React.Component {
         return ( 
             <Paper>
                 <br/>
-                <Typography align='center' variant='h4' gutterBottom>Rahul vs Modi Live Tweet Count</Typography>
+                <Typography align='center' variant='h4' color='secondary' gutterBottom>Rahul vs Modi Live Tweet Count</Typography>
                 <Divider/>
                 <br/>
                 <Chart

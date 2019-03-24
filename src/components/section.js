@@ -4,10 +4,23 @@ import PropTypes from 'prop-types'
  * Styles
  */
 import { withStyles } from '@material-ui/core/styles'
+/**
+ * Image
+ */
+import twitter from './twitter.jpg'
 
 const styles = theme => ({
   root: {
     overflowX: 'hidden'
+  },
+  rootFull: {
+    overflowX: 'hidden',
+    minHeight: 'calc(100vh - 64px)',
+    display: 'flex',
+    alignItems: 'center',
+    background: `url(${twitter}) no-repeat`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   },
   content: {
     margin: '0 auto',
@@ -29,9 +42,9 @@ const styles = theme => ({
 })
 
 const Section = (props) => {
-  const { classes, children, name } = props
+  const { classes, children, full, name } = props
   return (
-    <section className={classes.root}>
+    <section className={full ? classes.rootFull : classes.root}>
       <div id={name} name={name} className={classes.content}>
         {children}
       </div>
@@ -40,7 +53,12 @@ const Section = (props) => {
 }
 
 Section.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  full: PropTypes.bool
+}
+
+Section.defaultProps = {
+  full: false
 }
 
 export default withStyles(styles)(Section)

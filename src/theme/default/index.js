@@ -8,7 +8,7 @@ const palette = {
     contrastText: '#FFFFFF'
   },
   secondary: {
-    main: '#82B1FF',
+    main: '#38A1F3',
     contrastText: '#000000'
   }
 }
