@@ -8,10 +8,6 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
  */
 import theme from 'theme'
 /**
- * Contact form
- */
-import ContactForm from './contactForm'
-/**
  * UI
  */
 import Avatar from '@material-ui/core/Avatar'
@@ -33,6 +29,10 @@ import Phone from '@material-ui/icons/Phone'
 import Location from '@material-ui/icons/LocationOn'
 import { SocialIcon } from 'react-social-icons'
 /**
+ * Image
+ */
+import avatar from 'images/avatar.png'
+/**
  * Styles
  */
 const styles = theme => ({
@@ -45,8 +45,7 @@ const styles = theme => ({
     }
   },
   media: {
-    height: `1.5rem`,
-    marginTop: theme.spacing.unit * 2
+    width: '100%'
   }
 })
 
@@ -56,8 +55,30 @@ const Footer = ({ classes, theme: themeObj }) => {
       <MuiThemeProvider theme={theme.Dark}>
         <Section>
           <Grid container justify='center' spacing={32}>
-            <Grid item xs={12} sm={12} md={7} lg={7} xl={7}>
-              <ContactForm/>
+            <Grid container alignItems='center' item xs={12} sm={12} md={7} lg={7} xl={7}>
+              <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
+                <img className={classes.media} alt='avatar' src={avatar}/>
+              </Grid>
+              <Grid container item xs={12} sm={12} md={8} lg={9} xl={9} spacing={8}>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                  <img className={classes.media} alt='avatar' src={avatar}/>
+                </Grid>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                  <img className={classes.media} alt='avatar' src={avatar}/>
+                </Grid>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                  <img className={classes.media} alt='avatar' src={avatar}/>
+                </Grid>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                  <img className={classes.media} alt='avatar' src={avatar}/>
+                </Grid>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                  <img className={classes.media} alt='avatar' src={avatar}/>
+                </Grid>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                  <img className={classes.media} alt='avatar' src={avatar}/>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
               <List className={classes.list}>

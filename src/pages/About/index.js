@@ -16,7 +16,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 /**
  * Image
  */
-import ProfileImage from './profile.jpg'
+import ProfileImage from 'images/profile.jpg'
 /**
  * Styles
  */
