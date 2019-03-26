@@ -12,7 +12,7 @@ import {
 /**
  * UI
  */
-import Chart from 'components/lineChart'
+import Chart from '../../components/lineChart'
 import Divider from '@material-ui/core/Divider'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
